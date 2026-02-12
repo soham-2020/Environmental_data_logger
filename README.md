@@ -1,19 +1,17 @@
 # Environmental_data_logger
-Its a microcontroller based smart environmentalo data logger that can Measure temperature, humidity, light intensity, and air quality which can be connected to the socket present there 
-and also it can display real tume reading on LCD which can be connected to the socket present.It requires a 5v USB power input it consist of three main units:
+The Environmental Data Logger is a microcontroller-based smart monitoring system designed to measure key environmental parameters such as temperature, humidity, light intensity, and air quality. The system supports real-time data display on an external LCD and allows long-term storage using a MicroSD card. It operates on a 5V USB power supply and is organized into three major functional blocks for modular and reliable design.
 
 
 1)Control unit:
-Contains atmega328-P a crystall oscillator and a push button it is a brain of the system it is responsible for executing programmable instruction managing communication protocols and controlling the
-signals.
+The control unit is built around the ATmega328-P microcontroller, supported by a crystal oscillator for precise clock generation and a push button for user interaction. Acting as the brain of the system, it executes programmed instructions, manages communication protocols such as SPI and I²C, and controls data acquisition from connected sensors.
 
 
 2)Power managment block:
-It is responsible for managing the voltage rail and it regulates the voltage from 5v to 3.3v it filters out the noise by using capacitor,it also contain a led which is responsible for telling the user
-that whether the power is reaching the board or not,voltage regulator is working finr and the board is not internally burnt it also have a resisitor which is important so that led doesnt burn.
+This block regulates the incoming 5V supply to a stable 3.3V required by low-voltage peripherals. Decoupling capacitors are used to filter noise and ensure a stable voltage rail. A status LED, along with a current-limiting resistor, provides visual confirmation of proper power delivery and system operation.
 
 
 
 3)Sensor and Interfaces:
-Here we have a micro sd card which operates at 3.3v only, we use spi mode of communication for it we also have pull up and pull down resistors whoch is to prevent the floating signals(these are corrupted
-data and unpredcitable voltage) we are using BSS138 mosfet as logic shifter for making 5v to 3.3v.
+The system integrates a MicroSD card operating in SPI mode for reliable data logging. Pull-up and pull-down resistors are used to prevent floating signals, ensuring defined logic levels and improving communication stability. Additionally, BSS138 MOSFET-based level shifters safely translate logic between 5V and 3.3V devices, protecting sensitive components and enabling bidirectional communication.
+
+Overall, the design follows a modular architecture that improves scalability, simplifies debugging, and enhances system reliability.
